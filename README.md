@@ -1,10 +1,10 @@
 # SocialBatch
 
-A simple text-based social media application that works on both Linux (bash) and Windows (batch).
+A simple text-based social media application that works on Windows (batch), Linux (bash), and macOS (bash).
 
 ## Features
 
-- Create and manage Post accounts
+- Create and manage user accounts
 - Post text updates
 - View a timeline of posts from all users
 - Search for other users
@@ -16,8 +16,9 @@ A simple text-based social media application that works on both Linux (bash) and
 
 ```
 SocialBatch/
-├── SocialBatch.sh        # Linux/bash version
-├── SocialBatch.bat       # Windows version
+├── SocialBatch.sh        # Linux bash version
+├── SocialBatch_Mac.sh    # macOS optimized version
+├── SocialBatch.bat       # Windows batch version
 └── data/
     ├── users/            # User account information
     ├── posts/            # User posts
@@ -26,7 +27,7 @@ SocialBatch/
 
 ## How to Use
 
-### Linux/Mac (bash version)
+### Linux (bash version)
 
 1. Make sure the script is executable:
    ```
@@ -38,7 +39,19 @@ SocialBatch/
    ./SocialBatch.sh
    ```
 
-### Windows (batch versposts
+### macOS (Mac-optimized version)
+
+1. Make sure the script is executable:
+   ```
+   chmod +x SocialBatch_Mac.sh
+   ```
+
+2. Run the script:
+   ```
+   ./SocialBatch_Mac.sh
+   ```
+
+### Windows (batch version)
 1. Double-click the `SocialBatch.bat` file to run
 2. Alternatively, open Command Prompt and run:
    ```
@@ -50,7 +63,8 @@ SocialBatch/
 ### Creating an Account
 1. Select "Create New Account" from the main menu
 2. Enter a username (no spaces allowed)
-3. Set a passworusernamevide your full name and a brief bio
+3. Set a password
+4. Provide your full name and a brief bio
 
 ### Logging In
 1. Select "Login" from the main menu
@@ -83,4 +97,13 @@ SocialBatch/
 - All data is stored in plain text files for simplicity
 - User passwords are stored in plain text (not recommended for production use)
 - The bash version uses full date calculation for the deletion cooling period
+- The macOS version includes special date handling compatible with the Mac date command
 - The Windows batch version uses a simplified approach for date handling
+
+## Platform Compatibility
+
+- **Windows**: Fully compatible using the batch script (SocialBatch.bat)
+- **Linux**: Fully compatible using the bash script (SocialBatch.sh)
+- **macOS**: Fully compatible using the Mac-optimized bash script (SocialBatch_Mac.sh)
+
+The macOS version includes special date handling functions that work with the macOS date command, which has different syntax from the Linux date command. This ensures the account deletion cooling-off period works correctly on all platforms.
